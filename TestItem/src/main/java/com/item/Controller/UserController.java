@@ -1,10 +1,7 @@
 package com.item.Controller;
 
 import com.item.Service.DoService;
-import com.item.pojo.Exams;
-import com.item.pojo.Questions;
-import com.item.pojo.Records;
-import com.item.pojo.Student;
+import com.item.pojo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,8 +41,11 @@ public class UserController {
         return doService.findPage(student_id,name);
     }
     @GetMapping("/records")
-    public List<Records> getPageList(@RequestParam("student_id") Integer student_id) {
-        return doService.testRecords(student_id);
+    public PageBean getPageList(@RequestParam("student_id") Integer student_id
+    ,@RequestParam(defaultValue = "1") Integer page,
+     @RequestParam(defaultValue = "10") Integer pageSize) {
+        PageBean pageBean = doService.testRecords(student_id,page,pageSize);
+        return pageBean;
     }
 
     @PostMapping("/addRecords")

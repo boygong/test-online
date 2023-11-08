@@ -30,7 +30,7 @@ public interface UserMapper {
             "where student_exam.exam_id= question_exams.exam_id and question_exams.question_id = questions.id and student_exam.student_id =" +
             "#{student_id} and exams.name = #{name} and exams.id = student_exam.exam_id")
     public List<Questions> findPage(Integer student_id, String name);
-    @Select("select onlinetest.records_test.name,onlinetest.records_test.core,onlinetest.records_test.time from onlinetest.records_test " +
+    @Select("select * from onlinetest.records_test " +
             "where onlinetest.records_test.student_id = #{student_id}")
     public List<Records> testRecords(Integer student_id);
     @Insert("insert into onlinetest.records_test(name, time, core, student_id) VALUES " +

@@ -1,10 +1,9 @@
 package com.item.Service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.item.Dao.Impl.UserServiceImpl;
-import com.item.pojo.Exams;
-import com.item.pojo.Questions;
-import com.item.pojo.Records;
-import com.item.pojo.Student;
+import com.item.pojo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -29,8 +28,12 @@ public class DoService {
     {
         return userService.findPage(student_id,name);
     }
-    public List<Records> testRecords(Integer student_id){
-        return userService.testRecords(student_id);
+    public PageBean testRecords(Integer student_id, Integer page, Integer pageSize){
+        PageHelper.startPage(page,pageSize);
+        List<Records> recordsList = userService.testRecords(student_id);
+        Page<Records> recordsPageBean = (Page<Records>) recordsList;
+        PageBean pageBean = new PageBean(recordsPageBean.getTotal(), recordsPageBean.getResult());
+        return pageBean;
     }
     public void addRecords(Records records)
     {
