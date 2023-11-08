@@ -6,6 +6,7 @@ import FinalCore from '@/components/FinalCore.vue'
 import ReadTest from '@/components/ReadTest.vue'
 import TestList from '@/components/TestList.vue'
 import RecordsTest from '@/components/RecordsTest.vue'
+import TestAbout from '@/components/TestAbout.vue'
 
 Vue.use(VueRouter)
 
@@ -71,6 +72,11 @@ const routes = [
            meta: {
             title: '答题记录'
           }
+        },
+        {
+          path: 'testAbout',
+          name: 'TestAbout',
+          component:TestAbout
         }
       ]
       

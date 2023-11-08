@@ -72,7 +72,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .profile{
   position: absolute;
   top: 10px;

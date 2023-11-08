@@ -27,7 +27,7 @@
             </el-menu-item >
             <el-menu-item  index="4">
               <template slot="title"><i class="el-icon-pie-chart"></i>
-                <router-link to="">成绩分析</router-link>
+                <router-link to="/home/testAbout">成绩分析</router-link>
               </template>
             </el-menu-item >
           </el-menu>

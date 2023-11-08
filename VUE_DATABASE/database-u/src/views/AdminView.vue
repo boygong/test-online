@@ -97,7 +97,7 @@ export default({
     
 })
 </script>
-<style>
+<style scoped>
 .wrapper {
   --input-focus: #2d8cf0;
   --font-color: #323232;

@@ -1,7 +1,8 @@
 <template>
+  <div>
     <el-table
       :data="tableData"
-      style="width: 100%"
+      style="width: 100% ;position: relative;left:5% "
       :default-sort = "{prop: 'time', order: 'descending'}"
       >
       <el-table-column
@@ -33,6 +34,18 @@
         </template>
       </el-table-column>
     </el-table>
+        <div class="block" style="position: relative; left: 180px;top: 30px;">
+        <el-pagination
+           @size-change="handleSizeChange"
+           @current-change="handleCurrentChange"
+          :current-page="currentPage"
+          :page-sizes="[5, 6, 7, 8]"
+          :page-size="this.pageSize"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="this.total">
+        </el-pagination>
+      </div>
+</div>
   </template>
   <script>
   import axios from 'axios';
@@ -40,10 +53,57 @@
         name:"RecordsTest",
       data() {
         return {
-          tableData: []
+          tableData: [],
+          currentPage: 1,
+          pageSize:8,
+          total:null
         }
       },
       methods: {
+        handleCurrentChange(val){
+          this.currentPage = val;
+        const user = JSON.parse(localStorage.getItem('user'));
+        const student_id = parseInt(user.student_id);
+        const page = this.currentPage;
+        const pageSize = this.pageSize
+        axios.get('http://localhost:8080/records', { 
+        params: { 
+          student_id: student_id,
+          page,
+          pageSize
+        } 
+      })
+      .then(response => {
+        this.tableData = response.data.rows;
+        this.total = response.data.total;
+      })
+      .catch(error => {
+       
+        console.error(error);
+      });
+        },
+        handleSizeChange(val){
+          this.pageSize = val;
+        const user = JSON.parse(localStorage.getItem('user'));
+        const student_id = parseInt(user.student_id);
+        const page = this.pageSize;
+        const pageSize = this.pageSize
+        axios.get('http://localhost:8080/records', { 
+        params: { 
+          student_id: student_id,
+          page,
+          pageSize
+        } 
+      })
+      .then(response => {
+        this.tableData = response.data.rows;
+        this.total = response.data.total;
+      })
+      .catch(error => {
+       
+        console.error(error);
+      });
+        },
         formatDate(column) {
             const date = new Date(column.time); 
             const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
@@ -71,13 +131,18 @@
       mounted(){ 
         const user = JSON.parse(localStorage.getItem('user'));
         const student_id = parseInt(user.student_id);
+        const page = this.currentPage4;
+        const pageSize = this.pageSize
         axios.get('http://localhost:8080/records', { 
         params: { 
-          student_id: student_id
+          student_id: student_id,
+          page,
+          pageSize
         } 
       })
       .then(response => {
-        this.tableData = response.data;
+        this.tableData = response.data.rows;
+        this.total = response.data.total;
       })
       .catch(error => {
        
