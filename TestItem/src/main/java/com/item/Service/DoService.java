@@ -43,4 +43,7 @@ public class DoService {
     {
         userService.changeState(state,student_id,name);
     }
+    public Student selectAllData(Integer student_id){
+        return userService.selectAllData(student_id);
+    }
 }

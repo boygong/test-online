@@ -15,4 +15,5 @@ public interface UserService {
     public List<Records> testRecords(Integer student_id);
     public void addRecords(Records records);
     public void changeState(String state ,Integer student_id,String name);
+    public Student selectAllData(Integer student_id);
 }

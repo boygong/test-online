@@ -38,4 +38,6 @@ public interface UserMapper {
     public void addRecords(Records records);
     @Update("update onlinetest.student_exam set state = #{state} where student_id = #{student_id} and name = #{name}")
     public void changeState(String state ,Integer student_id,String name);
+    @Select("select * from onlinetest.students where student_id = #{student_id} ")
+    public Student selectAllData(Integer student_id);
 }

@@ -59,4 +59,8 @@ public class UserController {
     {
         doService.changeState(state,student_id,name);
     }
+    @GetMapping("/findAllData")
+    public Student getAllData(@RequestParam("student_id") Integer student_id) {
+        return doService.selectAllData(student_id);
+    }
 }

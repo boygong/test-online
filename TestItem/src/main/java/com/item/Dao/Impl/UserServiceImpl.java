@@ -48,5 +48,8 @@ public class UserServiceImpl implements UserService {
     public void changeState(String state, Integer student_id, String name) {
         userMapper.changeState(state,student_id,name);
     }
-
+    public Student selectAllData(Integer student_id)
+    {
+        return userMapper.selectAllData(student_id);
+    }
 }
