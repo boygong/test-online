@@ -26,7 +26,7 @@
         label="考试结束时间"
         width="180"
         sortable
-        :formatter="formatDateTime">
+        :formatter="formatDateTime1">
         </el-table-column>
       <el-table-column
         prop="teacher_name"
@@ -47,7 +47,7 @@
         label="操作"
         width="180">
         <template slot-scope="scope">
-          <el-button :disabled="scope.row.state === '已完成' || scope.row.state === '已过期'"
+          <el-button :disabled="scope.row.state === '已完成' || scope.row.state === '已过期' || scope.row.state === '待发布'"
           @click.native.prevent="turnto(scope.$index, tableData)"
           type="text"
           size="small">
@@ -78,6 +78,8 @@
                   return 'warning';
                 case '进行中':
                   return 'success';
+                case '待发布':
+                  return '';
                 default:
                   return 'primary';
               }
@@ -91,6 +93,11 @@
             const isoDate = row.start_time; 
             const date = new Date(isoDate);
             return date.toLocaleString(); 
+            },
+        formatDateTime1(row){
+            const isoDate = row.end_time; 
+            const date = new Date(isoDate);
+            return date.toLocaleString(); 
             }
       },mounted() {
         const user = JSON.parse(localStorage.getItem('user'));
@@ -102,14 +109,18 @@
 
             this.tableData.forEach(row => {
               const endTime = new Date(row.end_time); 
+              const startTime = new Date(row.start_time); 
               const timeDiff = endTime - currentTime; 
+              const timeDiff1 = startTime - currentTime; 
               if(row.state != '已完成')
               {
                 if (timeDiff < 0) {
                 row.state = '已过期'; 
               } else if (timeDiff < 2 * 60 * 60 * 1000) {
                 row.state = '即将过期'; 
-              } else {
+              } else if(timeDiff1 > 0 && timeDiff >0){
+                row.state = '待发布'; 
+              }else{
                 row.state = '进行中'; 
               }
               }

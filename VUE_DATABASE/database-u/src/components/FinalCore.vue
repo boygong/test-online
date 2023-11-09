@@ -42,6 +42,7 @@
         <span>我的答案: {{ getAnswerLetter(results[index]) }}</span>
         <span style="margin-left: 70%;">正确答案: {{ question.correctAnswer }}</span>
       </div>
+      <el-backtop target=".container"></el-backtop>
     </div>
   </div>
 </template>

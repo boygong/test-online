@@ -1,102 +1,129 @@
 <template>
-    <div class="wrapper">
-        <div class="card-switch">
-            <label class="switch">
-               <input type="checkbox" class="toggle">
-               <span class="slider"></span>
-               <span class="card-side"></span>
-               <div class="flip-card__inner">
-                  <div class="flip-card__front">
-                     <div class="title">Log in</div>
-                     <form class="flip-card__form">
-                        <input class="flip-card__input" v-model="id" name="id" placeholder="id" >
-                        <input class="flip-card__input"  v-model = "password" name="password" placeholder="Password" type="password">
-                        <Button class="flip-card__btn" @click="ToMain">Let`s go!</Button>
-                     </form>
-                  </div>
-                  <div class="flip-card__back">
-                     <div class="title">Sign up</div>
-                     <form class="flip-card__form" >
-                        <input class="flip-card__input" v-model="name" placeholder="Name" >
-                        <input class="flip-card__input" v-model="classname" name="class_name" placeholder="ClassName">
-                        <input class="flip-card__input" v-model="Id1" name="student_id" placeholder="Id" >
-                        <input class="flip-card__input" v-model="password1" name="password" placeholder="Password" type="password">
-                        <input class="flip-card__input" name="password" placeholder="再次输入密码" type="password">
-                        <button class="flip-card__btn" @click="tosign">Confirm!</button>
-                     </form>
-                  </div>
-               </div>
-            </label>
-        </div>   
-   </div>
+  <div class="wrapper">
+    <div class="card-switch">
+      <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider"></span>
+        <span class="card-side"></span>
+        <div class="flip-card__inner">
+          <div class="flip-card__front">
+            <div class="title">Log in</div>
+            <form class="flip-card__form">
+              <input class="flip-card__input" v-model="id" name="id" placeholder="id">
+              <input class="flip-card__input" v-model="password" name="password" placeholder="Password" type="password">
+              <Button class="flip-card__btn" @click="ToMain">Let`s go!</Button>
+            </form>
+          </div>
+          <div class="flip-card__back">
+            <div class="title">Sign up</div>
+            <form class="flip-card__form">
+              <input class="flip-card__input" v-model="name" placeholder="Name">
+              <input class="flip-card__input" v-model="classname" name="class_name" placeholder="ClassName">
+              <input class="flip-card__input" v-model="Id1" name="student_id" placeholder="Id">
+              <input class="flip-card__input" v-model="password1" name="password" placeholder="Password" type="password">
+              <input class="flip-card__input" v-model="confirmPassword" name="confirm_password" placeholder="Confirm Password" type="password">
+              <button class="flip-card__btn" @click="tosign">Confirm!</button>
+            </form>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
 </template>
+
 <script>
-import { Button } from 'element-ui';
+import { Button, Loading } from 'element-ui';
 import axios from 'axios';
-export default({
-    data() {
-        return {
-          id:null,
-          password:null,
-          name:null,
-          classname:null,
-          Id1:null,
-          password1:null
-        };
-    },
-    mounted() {
-    },
-    methods: {
-        ToMain:function() {
-          const userData = {
-              student_id: this.id, 
-              password: this.password, 
-            };
-        axios.post('http://localhost:8080/admin', userData)
+
+export default {
+  data() {
+    return {
+      id: null,
+      password: null,
+      name: null,
+      classname: null,
+      Id1: null,
+      password1: null,
+      confirmPassword: null
+    };
+  },
+  methods: {
+    ToMain() {
+      if (!this.id || !this.password) {
+        this.$message({
+          message: '请输入账号和密码',
+          type: 'error'
+        });
+        return;
+      }
+      Loading.service();
+      const userData = {
+        student_id: this.id,
+        password: this.password
+      };
+      axios.post('http://localhost:8080/admin', userData)
         .then(response => {
           console.log(response.data);
-          this.$message({
-            message: '登录成功',
-            type: 'success'
-          });
-         // 登录成功后将用户信息保存到LocalStorage
+          this.$message({ message: '登录成功', type: 'success' });
           localStorage.setItem('user', JSON.stringify(userData));
           this.$router.push('/home/about');
         })
         .catch(error => {
           if (error.response.status === 401) {
-              console.log(error.response.data);
-              this.$message.error('账号或密码错误');
-            }
+            console.log(error.response.data);
+            this.$message({
+              message: '账号或密码错误',
+              type: 'error'
+            });
+          }
+        })
+        .finally(() => {
+          Loading.service().close(); // 关闭加载状态
         });
-        },
+    },
 
-        tosign:function(){
-          const userData = {
-              student_id: this.Id1, 
-              password: this.password1, 
-              class_name:this.classname,
-              name:this.name,
-            };
-        axios.post('http://localhost:8080/sign',userData)
+    tosign() {
+      if (!this.name || !this.classname || !this.Id1 || !this.password1 || !this.confirmPassword) {
+        this.$message({
+          message: '请填写完整注册信息',
+          type: 'error'
+        });
+        return;
+      }
+      if (this.password1 !== this.confirmPassword) {
+        this.$message({
+          message: '两次密码输入不一致',
+          type: 'error'
+        });
+        return;
+      }
+      Loading.service();
+      const userData = {
+        student_id: this.Id1,
+        password: this.password1,
+        class_name: this.classname,
+        name: this.name
+      };
+      axios.post('http://localhost:8080/sign', userData)
         .then(response => {
           console.log(response.data);
         })
         .catch(error => {
           if (error.response.status === 400) {
-              console.log(error.response.data);
-              this.$message({
-                  message: '用户已存在',
-                  type: 'warning'
-                });
-            }
+            console.log(error.response.data);
+          }
+        })
+        .finally(() => {
+          Loading.service().close(); // 关闭加载状态
         });
-        }
-    },
-    components: { Button },
-    
-})
+    }
+  },
+  components: {
+    Button
+  },
+};
 </script>
+
 <style scoped>
 .wrapper {
   --input-focus: #2d8cf0;

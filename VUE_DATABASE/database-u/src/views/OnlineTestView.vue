@@ -3,7 +3,7 @@
     <el-container >
       <el-header style="text-align: right; font-size: 30px;display: flex;flex-direction: column;" class="header">
         <div class="time">
-          <span>倒计时: {{ hours }} 小时 {{ minutes }} 分钟 {{ seconds }} 秒</span>
+          <span>考试还剩: {{ hours }} 小时 {{ minutes }} 分钟 {{ seconds }} 秒</span>
         </div>
       </el-header>
       <el-main>
