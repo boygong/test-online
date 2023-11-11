@@ -78,7 +78,7 @@
         this.total = response.data.total;
       })
       .catch(error => {
-       
+        this.$message.error('出错啦~');
         console.error(error);
       });
         },
@@ -100,7 +100,7 @@
         this.total = response.data.total;
       })
       .catch(error => {
-       
+        this.$message.error('出错啦~');
         console.error(error);
       });
         },
@@ -145,7 +145,7 @@
         this.total = response.data.total;
       })
       .catch(error => {
-       
+        this.$message.error('出错啦~');
         console.error(error);
       });
       }

@@ -6,19 +6,19 @@
           <span>考试还剩: {{ hours }} 小时 {{ minutes }} 分钟 {{ seconds }} 秒</span>
         </div>
       </el-header>
-      <el-main>
+      <el-main >
         <div class="question-grid">
           <div class="question">
             <div style="width: 90%; height: 100px; box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)">
-              <span>{{ this.number+1 + '. '}}</span>
+              <span>{{ this.number+1 + ' .  '}}</span>
               <span>{{ this.type===0 ? '（选择题）' :'（判断题）' }}</span>
               <span>{{  formList[number].content }}</span>
             </div>
-            <el-form label-position="top">
+            <el-form label-position="top" >
               <el-form-item>
               <el-radio-group v-model="this.selectedOptions[this.number]">
                 <el-radio :label="1" @change="change(1)">
-                  <span>{{ this.type === 1 ? 'T.' : 'A.' }}</span>
+                  <span>{{ this.type === 1 ? 'T.' : ' A. ' }}</span>
                   <span>{{ formList[number].opa }}</span>
                 </el-radio>
               </el-radio-group>
@@ -26,7 +26,7 @@
             <el-form-item>
               <el-radio-group v-model="this.selectedOptions[this.number]">
                 <el-radio :label="2" @change="change(2)">
-                  <span>{{ this.type === 1 ? 'F.' : 'B.' }}</span>
+                  <span>{{ this.type === 1 ? 'F.' : ' B. ' }}</span>
                   <span>{{ formList[number].opb }}</span>
                 </el-radio>
               </el-radio-group>
@@ -34,14 +34,14 @@
               <el-form-item v-if="this.type === 1 ? false : true">
                   <el-radio-group v-model="this.selectedOptions[this.number]">
                     <el-radio :label="3" @change="change(3)">
-                      {{  'C. ' + formList[number].opc }}
+                      {{  ' C.  ' + formList[number].opc }}
                     </el-radio>
                   </el-radio-group>
                 </el-form-item>
               <el-form-item v-if="this.type === 1 ? false : true">
                 <el-radio-group v-model="this.selectedOptions[this.number]">
                   <el-radio :label="4" @change="change(4)"> 
-                    {{ 'D. ' + formList[number].opd }}</el-radio>
+                    {{ ' D.  ' + formList[number].opd }}</el-radio>
                 </el-radio-group>
               </el-form-item>
             </el-form>
@@ -55,7 +55,7 @@
           <el-aside style="width: 20%;">
             <div class="row">
               <div v-for="index in length" :key="index" class="col-sm-4" style="display: inline-block; width: 20%; margin-right: 3%;">
-                <el-button :type="selectedOptions[index-1] === null ? ' ' : 'primary'" @click="goToQuestion(index)" style="margin-bottom: 10px; width: 100%;">
+                <el-button :type="selectedOptions[index-1] === null ? ' ' : 'primary'" @click="goToQuestion(index)" class="custom-btn" style="margin-bottom: 10px; width: 100%;">
                   {{ index }}
                 </el-button>
               </div>
@@ -294,4 +294,16 @@ export default {
     margin-right: 400px;
     margin-top: 0px;
   }
+  .custom-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.custom-btn .el-button__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 </style>

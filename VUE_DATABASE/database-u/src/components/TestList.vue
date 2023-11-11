@@ -53,6 +53,8 @@
           size="small">
           进入考试
           </el-button>
+          <el-button icon="el-icon-delete" type="text" @click="deleteRow(scope.$index, tableData)" v-show="scope.row.state === '已完成' ||
+           scope.row.state === '已过期' ? true :false"></el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -66,7 +68,7 @@
         return {
           tableData: [{
            
-          }]
+          }],
         }
       },
       methods: {
@@ -88,6 +90,19 @@
           const name = rows[index].name;
           const user = JSON.parse(localStorage.getItem('user'));
           this.$router.push({name:'ReadTest',params:{ param1: name, param2: parseInt(user.student_id) }});
+        },
+        deleteRow(index, rows) {
+          this.$confirm('确定提交吗？, 是否继续?', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            rows.splice(index, 1);
+            this.$message({
+              type: 'success',
+              message: '提交成功!'
+            });
+          })
         },
         formatDateTime(row){
             const isoDate = row.start_time; 
@@ -128,6 +143,7 @@
             })
             .catch(error => {
             console.error(error);
+            this.$message.error('出错啦~');
             });
         },
         

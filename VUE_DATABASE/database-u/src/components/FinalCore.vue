@@ -3,7 +3,7 @@
     <h1>你本次考试的成绩是 <span style="color: red;">{{ core }}</span> 分</h1>
     <div v-for="(question, index) in visibleList" :key="index" class="item-style">
       <div>
-        <p>{{ question.content }}</p>
+        <p>{{ index+1 +' . '+ question.content }}</p>
       </div>
       <div>
         <el-form label-position="top">

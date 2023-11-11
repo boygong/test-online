@@ -18,7 +18,7 @@
             <div class="title">Sign up</div>
             <form class="flip-card__form">
               <input class="flip-card__input" v-model="name" placeholder="Name">
-              <input class="flip-card__input" v-model="classname" name="class_name" placeholder="ClassName">
+              <input class="flip-card__input" v-model="classname" name="class_name" placeholder="软件x班">
               <input class="flip-card__input" v-model="Id1" name="student_id" placeholder="Id">
               <input class="flip-card__input" v-model="password1" name="password" placeholder="Password" type="password">
               <input class="flip-card__input" v-model="confirmPassword" name="confirm_password" placeholder="Confirm Password" type="password">
@@ -48,6 +48,10 @@ export default {
     };
   },
   methods: {
+    handleBeforeUnload() {
+      // 在用户离开页面之前执行清理操作
+      localStorage.removeItem('user');
+    },
     ToMain() {
       if (!this.id || !this.password) {
         this.$message({
@@ -97,6 +101,20 @@ export default {
         });
         return;
       }
+      if (this.Id1 > 100000) {
+        this.$message({
+          message: 'id过长',
+          type: 'error'
+        });
+        return;
+      }
+      if (this.class_name > 6 || this.class_name < 1) {
+        this.$message({
+          message: '班级序号有误',
+          type: 'error'
+        });
+        return;
+      }
       Loading.service();
       const userData = {
         student_id: this.Id1,
@@ -112,6 +130,7 @@ export default {
           if (error.response.status === 400) {
             console.log(error.response.data);
           }
+          this.$message.error('出错啦~');
         })
         .finally(() => {
           Loading.service().close(); // 关闭加载状态
@@ -120,6 +139,12 @@ export default {
   },
   components: {
     Button
+  },
+  created() {
+    window.addEventListener('beforeunload', this.handleBeforeUnload);
+  },
+  beforeDestroy() {
+    window.removeEventListener('beforeunload', this.handleBeforeUnload);
   },
 };
 </script>

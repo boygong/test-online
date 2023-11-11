@@ -83,10 +83,13 @@ export default {
         axios.get('http://localhost:8080/findAllData', { params: { student_id: parseInt(user.student_id) } })
             .then(response => {
             this.form = response.data;
+            const image = this.form.image;
+            this.form.image = (image === null ? '2.jpg' : image );
             console.log(response.data);
             })
             .catch(error => {
             console.error(error);
+            this.$message.error('出错啦~');
             });
   }
 };
