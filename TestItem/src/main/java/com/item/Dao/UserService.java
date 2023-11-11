@@ -1,9 +1,6 @@
 package com.item.Dao;
 
-import com.item.pojo.Exams;
-import com.item.pojo.Questions;
-import com.item.pojo.Records;
-import com.item.pojo.Student;
+import com.item.pojo.*;
 
 import java.util.List;
 
@@ -16,4 +13,5 @@ public interface UserService {
     public void addRecords(Records records);
     public void changeState(String state ,Integer student_id,String name);
     public Student selectAllData(Integer student_id);
+    public Core selectAllCore(Integer student_id);
 }

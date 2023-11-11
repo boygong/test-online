@@ -46,4 +46,8 @@ public class DoService {
     public Student selectAllData(Integer student_id){
         return userService.selectAllData(student_id);
     }
+    public Core findAllCore(Integer student_id)
+    {
+        return userService.selectAllCore(student_id);
+    }
 }

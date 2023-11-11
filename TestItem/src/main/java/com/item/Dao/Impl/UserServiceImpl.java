@@ -2,10 +2,7 @@ package com.item.Dao.Impl;
 
 import com.item.Dao.UserService;
 import com.item.Mapper.UserMapper;
-import com.item.pojo.Exams;
-import com.item.pojo.Questions;
-import com.item.pojo.Records;
-import com.item.pojo.Student;
+import com.item.pojo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -51,5 +48,17 @@ public class UserServiceImpl implements UserService {
     public Student selectAllData(Integer student_id)
     {
         return userMapper.selectAllData(student_id);
+    }
+    public Core selectAllCore(Integer student_id)
+    {
+        Core core = new Core();
+        core.setMaxCore(userMapper.findMaxCore(student_id));
+        core.setMinCore(userMapper.findMinCore(student_id));
+        core.setTotal(userMapper.findAllNum(student_id));
+        core.setBestCore(userMapper.findBestCore(student_id));
+        core.setMiddleCore(userMapper.findMiddleCore(student_id));
+        core.setBadCore(userMapper.findBadCore(student_id));
+        core.setAverageCore(userMapper.findAvgCore(student_id));
+        return core;
     }
 }

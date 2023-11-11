@@ -63,4 +63,8 @@ public class UserController {
     public Student getAllData(@RequestParam("student_id") Integer student_id) {
         return doService.selectAllData(student_id);
     }
+    @GetMapping("/findAllCore")
+    public Core getAllCore(@RequestParam("student_id") Integer student_id) {
+        return doService.findAllCore(student_id);
+    }
 }
