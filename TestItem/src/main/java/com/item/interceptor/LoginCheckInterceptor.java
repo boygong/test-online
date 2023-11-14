@@ -3,16 +3,18 @@ package com.item.interceptor;
 import com.item.utils.JwtUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-
+@Component
 public class LoginCheckInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String jwt = request.getHeader("token");
 
+        String jwt = request.getHeader("Authorization");
+        System.out.println(jwt);
         if(!StringUtils.hasLength(jwt))
         {
             response.getWriter().write("NOT_LOGIN");
