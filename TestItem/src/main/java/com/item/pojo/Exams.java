@@ -1,6 +1,8 @@
 package com.item.pojo;
 
 import lombok.Data;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.time.LocalDateTime;
 

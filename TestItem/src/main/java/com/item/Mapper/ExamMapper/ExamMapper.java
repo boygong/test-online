@@ -10,7 +10,7 @@ import java.util.List;
 
 @Mapper
 public interface ExamMapper {
-    @Select("select exams.id,state,exams.name,teacher_name,start_time,end_time from onlinetest.student_exam,onlinetest.exams,onlinetest.teacher where student_exam.exam_id = exams.id and student_exam.student_id = #{student_id} and exams.teacher_id = teacher.teacher_id")
+    @Select("select exams.id,exams.name,teacher.teacher_name,exams.start_time,exams.end_time,state from onlinetest.student_exam,onlinetest.exams,onlinetest.teacher where student_exam.exam_id = exams.id and student_exam.student_id = #{student_id} and exams.teacher_id = teacher.teacher_id")
     public List<Exams> findTest(Integer student_id);
     @Select("select onlinetest.questions.content,onlinetest.questions.type,onlinetest.questions.opa," +
             "onlinetest.questions.opb,onlinetest.questions.opc,onlinetest.questions.opd,onlinetest.questions.correctAnswer " +
