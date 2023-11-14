@@ -102,7 +102,7 @@ export default {
     this.whetherto = false;
     this.name= this.$route.params.param1;
     this.student_id = this.$route.params.param2;
-    axios.get('http://localhost:8080/testPage', { 
+    axios.get('http://localhost:4399/testPage', { 
         params: { 
           name: this.name,
           student_id: this.student_id
@@ -149,7 +149,7 @@ export default {
             name,
             student_id
           };
-          axios.post('http://localhost:8080/addRecords', recordData)
+          axios.post('http://localhost:4399/addRecords', recordData)
             .then(response => {
               console.log('Record added:', response.data);
             })
@@ -163,7 +163,7 @@ export default {
       const student_id = this.student_id; 
       const name = this.name; 
 
-      axios.put('http://localhost:8080/update', null, { 
+      axios.put('http://localhost:4399/update', null, { 
         params: {
           state: state,
           student_id: student_id,

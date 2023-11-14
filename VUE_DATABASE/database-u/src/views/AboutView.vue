@@ -80,7 +80,7 @@ export default {
   },
   mounted(){
     const user = JSON.parse(localStorage.getItem('user'));
-        axios.get('http://localhost:8080/findAllData', { params: { student_id: parseInt(user.student_id) } })
+        axios.get('http://localhost:4399/findAllData', { params: { student_id: parseInt(user.student_id) } })
             .then(response => {
             this.form = response.data;
             const image = this.form.image;

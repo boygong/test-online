@@ -34,7 +34,7 @@ export default {
   },
   mounted() {
     const user = JSON.parse(localStorage.getItem('user'));
-    axios.get('http://localhost:8080/findAllCore', { params: { student_id: parseInt(user.student_id) } })
+    axios.get('http://localhost:4399/findAllCore', { params: { student_id: parseInt(user.student_id) } })
       .then(response => {
         this.bestCore = response.data.bestCore;
         this.middleCore = response.data.middleCore;

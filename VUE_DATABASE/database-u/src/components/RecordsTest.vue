@@ -66,7 +66,7 @@
         const student_id = parseInt(user.student_id);
         const page = this.currentPage;
         const pageSize = this.pageSize
-        axios.get('http://localhost:8080/records', { 
+        axios.get('http://localhost:4399/records', { 
         params: { 
           student_id: student_id,
           page,
@@ -88,7 +88,7 @@
         const student_id = parseInt(user.student_id);
         const page = this.pageSize;
         const pageSize = this.pageSize
-        axios.get('http://localhost:8080/records', { 
+        axios.get('http://localhost:4399/records', { 
         params: { 
           student_id: student_id,
           page,
@@ -133,7 +133,7 @@
         const student_id = parseInt(user.student_id);
         const page = this.currentPage4;
         const pageSize = this.pageSize
-        axios.get('http://localhost:8080/records', { 
+        axios.get('http://localhost:4399/records', { 
         params: { 
           student_id: student_id,
           page,

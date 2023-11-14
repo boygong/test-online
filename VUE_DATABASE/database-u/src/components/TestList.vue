@@ -116,7 +116,7 @@
             }
       },mounted() {
         const user = JSON.parse(localStorage.getItem('user'));
-        axios.get('http://localhost:8080/find', { params: { student_id: parseInt(user.student_id) } })
+        axios.get('http://localhost:4399/find', { params: { student_id: parseInt(user.student_id) } })
             .then(response => {
             this.tableData = response.data;
             console.log(response.data);

@@ -65,21 +65,17 @@ export default {
         student_id: this.id,
         password: this.password
       };
-      axios.post('http://localhost:8080/admin', userData)
+      axios.post('http://localhost:4399/admin', userData)
         .then(response => {
           console.log(response.data);
+          const token = response.data;
+          localStorage.setItem('token', token);
           this.$message({ message: '登录成功', type: 'success' });
           localStorage.setItem('user', JSON.stringify(userData));
           this.$router.push('/home/about');
         })
-        .catch(error => {
-          if (error.response.status === 401) {
-            console.log(error.response.data);
-            this.$message({
-              message: '账号或密码错误',
-              type: 'error'
-            });
-          }
+        .catch(()=> {
+        
         })
         .finally(() => {
           Loading.service().close(); // 关闭加载状态
@@ -122,7 +118,7 @@ export default {
         class_name: this.classname,
         name: this.name
       };
-      axios.post('http://localhost:8080/sign', userData)
+      axios.post('http://localhost:4399/sign', userData)
         .then(response => {
           console.log(response.data);
         })
