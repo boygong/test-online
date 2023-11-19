@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a4ec6cd-1fcb-4f3e-8e52-cb3f31787fc5" name="更改" comment="汇总学生端（教师端无法正常运行）">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Pojo/StudentExam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/ExamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/ExamController2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/ExamController2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Mapper/ExamMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Mapper/ExamMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Mapper/StudentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Pojo/Records.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Pojo/Records.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Service/ExamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Service/ExamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Service/impl/ExamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Service/impl/ExamServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/config/WebConfig.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.6.1\mvn_repo" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.6.1" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="openjdk-19" />
+  </component>
+  <component name="ProjectId" id="2Xme6mpUKcVKUM6j6smRD2jAlGU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/JavaeeProject/online-test/src/main/java/com/gong/onlinetest&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d37b468128e5479e3d0d41c154b296b0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gong.onlinetest.Service.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Desktop\JavaeeProject\online-test\src\main\java\com\gong\onlinetest" />
+      <recent name="D:\Desktop\JavaeeProject\online-test\src\main\java\com\gong\onlinetest\Pojo" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.gong.onlinetest" />
+      <recent name="com.gong" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gong.onlinetest.Pojo" />
+      <recent name="com.gong.onlinetest.Mapper" />
+      <recent name="com.gong.onlinetest.Service.impl" />
+      <recent name="com.gong.onlinetest.Service" />
+      <recent name="com.gong.onlinetest.Service2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.OnlineTestApplication">
+    <configuration name="OnlineTestApplicationTests.testInsertQuestion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gong.onlinetest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.gong.onlinetest" />
+      <option name="MAIN_CLASS_NAME" value="com.gong.onlinetest.OnlineTestApplicationTests" />
+      <option name="METHOD_NAME" value="testInsertQuestion" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OnlineTestApplicationTests.testSelectStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gong.onlinetest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.gong.onlinetest" />
+      <option name="MAIN_CLASS_NAME" value="com.gong.onlinetest.OnlineTestApplicationTests" />
+      <option name="METHOD_NAME" value="testSelectStudent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OnlineTestApplicationTests.testSelectTeacher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gong.onlinetest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.gong.onlinetest" />
+      <option name="MAIN_CLASS_NAME" value="com.gong.onlinetest.OnlineTestApplicationTests" />
+      <option name="METHOD_NAME" value="testSelectTeacher" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="online-test中的com.gong.onlinetest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gong.onlinetest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="PACKAGE_NAME" value="com.gong.onlinetest" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OnlineTestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="online-test" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gong.onlinetest.OnlineTestApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestItemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="TestItem" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.item.TestItemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.OnlineTestApplicationTests.testSelectTeacher" />
+        <item itemvalue="JUnit.OnlineTestApplicationTests.testSelectStudent" />
+        <item itemvalue="JUnit.OnlineTestApplicationTests.testInsertQuestion" />
+        <item itemvalue="JUnit.online-test中的com.gong.onlinetest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="3a4ec6cd-1fcb-4f3e-8e52-cb3f31787fc5" name="更改" comment="" />
+      <created>1699235666789</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699235666789</updated>
+      <workItem from="1699235667719" duration="1786000" />
+      <workItem from="1699238513421" duration="92000" />
+      <workItem from="1699238627827" duration="433000" />
+      <workItem from="1699239073202" duration="26000" />
+      <workItem from="1699239110719" duration="628000" />
+      <workItem from="1699239773712" duration="4000" />
+      <workItem from="1699239801615" duration="3224000" />
+      <workItem from="1699253395939" duration="4896000" />
+      <workItem from="1699275116402" duration="2832000" />
+      <workItem from="1699322643005" duration="4864000" />
+      <workItem from="1699341661780" duration="592000" />
+      <workItem from="1699342269296" duration="36000" />
+      <workItem from="1699342334164" duration="74000" />
+      <workItem from="1699342426296" duration="7671000" />
+      <workItem from="1699437562346" duration="4358000" />
+      <workItem from="1699580442503" duration="6589000" />
+      <workItem from="1699757873443" duration="1477000" />
+      <workItem from="1699773305443" duration="2507000" />
+      <workItem from="1699842948132" duration="7112000" />
+      <workItem from="1699857378036" duration="6613000" />
+      <workItem from="1699873649416" duration="163000" />
+      <workItem from="1699927184499" duration="6593000" />
+      <workItem from="1699957879581" duration="6899000" />
+      <workItem from="1700019700681" duration="6345000" />
+      <workItem from="1700037516415" duration="9314000" />
+      <workItem from="1700191570438" duration="6071000" />
+      <workItem from="1700210480910" duration="4280000" />
+      <workItem from="1700363254687" duration="4366000" />
+    </task>
+    <task id="LOCAL-00001" summary="汇总学生端（教师端无法正常运行）">
+      <created>1700044604660</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700044604660</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="汇总学生端（教师端无法正常运行）" />
+    <option name="LAST_COMMIT_MESSAGE" value="汇总学生端（教师端无法正常运行）" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/StudentController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/StudentController.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gong/onlinetest/utils/JwtUtils.java</url>
+          <line>19</line>
+          <properties class="com.gong.onlinetest.utils.JwtUtils" method="generateJwt">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

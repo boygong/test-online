@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gong.onlinetest.Mapper.StudentMapper">
+    <select id="SelectStudent" resultType="com.gong.onlinetest.Pojo.Student">
+        select id, name, password, class_name, student_id
+        from students
+        <where>
+            <if test="studentId != null">student_id=#{studentId}</if>
+            <if test="className != null">and class_name=#{className}</if>
+            <if test="name!=null">and name like concat('%',#{name},'%')</if>
+        </where>
+    </select>
+</mapper>
