@@ -50,12 +50,20 @@ public interface ExamMapper {
     @Update("update onlinetest.student_exam set state = #{state} where student_id = #{student_id} and name = #{name}")
     public void changeState(String state, Integer student_id, String name);
 
-    @Select("SELECT student_exam.student_id, students.name, student_exam.state, student_exam.name, time, core " +
+    @Select("SELECT student_exam.student_id, students.name as studentName, student_exam.state, student_exam.name as examName, time, core " +
             "FROM students," +
             "     student_exam" +
             "         LEFT JOIN records_test" +
             "                   ON student_exam.student_id = records_test.student_id and student_exam.name = records_test.name " +
-            "where exam_id = 23" +
+            "where exam_id = #{examId}" +
             "  and students.student_id = student_exam.student_id;")
     List<StudentExam> SelectExamById(Integer examId);
+
+    @Select("SELECT student_exam.student_id, students.name as studentName, student_exam.state, student_exam.name AS exam_name, time, core " +
+            "FROM students" +
+            "         JOIN student_exam ON students.student_id = student_exam.student_id" +
+            "         LEFT JOIN records_test" +
+            "                   ON student_exam.student_id = records_test.student_id AND student_exam.name = records_test.name " +
+            "WHERE student_exam.student_id = #{studentId};")
+    List<StudentExam> SelectExamByStu(Integer studentId);
 }

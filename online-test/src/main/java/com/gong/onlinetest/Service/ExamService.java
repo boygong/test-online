@@ -24,4 +24,7 @@ public interface ExamService {
     public void changeState(String state ,Integer student_id,String name);
 
     List<StudentExam> GetExamById(Integer examId);
+
+    List<StudentExam> GetExamByStu(Integer studentId);
+
 }

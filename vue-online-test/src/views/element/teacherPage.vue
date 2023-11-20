@@ -92,7 +92,7 @@
                         <el-table-column prop="password" label="学生密码" width="220">
                         </el-table-column>
                         <el-table-column label="查看学生考试信息" width="220">
-                            <el-button type="info" plain>查看</el-button>
+                            <el-button slot-scope="scope" type="info" @click="searchDetail(scope.row.studentId)" plain>查看</el-button>
                         </el-table-column>
                         <el-table-column label="编辑学生信息" width="220">
                             <el-button slot-scope="scope" type="primary" @click="openEditDialog(scope.row)">编辑</el-button>
@@ -249,6 +249,10 @@ export default {
             //没有修改，点击取消之后的函数
             this.dialogFormVisible = false;
             this.$message("取消修改")
+        },
+        searchDetail(studentId){
+            console.log(studentId);
+            this.$router.push({name:'detailPage',params:{studentId:studentId}});
         }
     },
     mounted() {

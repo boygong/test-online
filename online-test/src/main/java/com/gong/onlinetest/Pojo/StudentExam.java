@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 public class StudentExam {
     private Integer studentId;
     private String state;
-    private String name;
+    private String studentName;
+    private String examName;
     private LocalDateTime time;
     private String core;
 }

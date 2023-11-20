@@ -60,7 +60,7 @@
                     <el-table-column label="开始时间" prop="startTime" sortable>
                     </el-table-column>
                     <el-table-column label="查看详细">
-                        <el-button type="primary">查看</el-button>
+                        <el-button slot-scope="scope" type="primary" @click="searchDetail(scope.row.id)">查看</el-button>
                     </el-table-column>
                 </el-table>
 
@@ -97,6 +97,10 @@ export default {
             };
             return classMap[classCode] || "未知班级";
         },
+        searchDetail(id) {
+            console.log(id);
+            this.$router.push({name:'detailPage',params:{examId:id}});
+        }
     },
 
     mounted() {

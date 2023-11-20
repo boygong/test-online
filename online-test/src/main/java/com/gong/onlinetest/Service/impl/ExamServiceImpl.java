@@ -85,5 +85,10 @@ public class ExamServiceImpl implements ExamService {
         return studentExams;
     }
 
+    @Override
+    public List<StudentExam> GetExamByStu(Integer studentId) {
+        List<StudentExam> studentExams = examMapper.SelectExamByStu(studentId);
+        return studentExams;
+    }
 
 }

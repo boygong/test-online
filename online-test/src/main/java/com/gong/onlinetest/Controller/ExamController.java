@@ -46,4 +46,10 @@ public class ExamController {
         List<StudentExam> studentExams = examService.GetExamById(examId);
         return Result.success(studentExams);
     }
+
+    @GetMapping("getExamByStudent")
+    public Result GetExamByStu(@RequestParam Integer studentId){
+        List<StudentExam> studentExams = examService.GetExamByStu(studentId);
+        return Result.success(studentExams);
+    }
 }
