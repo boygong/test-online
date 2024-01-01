@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <el-container>
       <el-header style="text-align: right; font-size: 30px;display: flex;flex-direction: column;" class="header">
         <div class="time">
@@ -160,7 +160,7 @@ export default {
     },
     changeState() {
       const state = "已完成";
-      const student_id = this.studentId;
+      const student_id = this.student_id;
       const name = this.name;
 
       axios.put('http://localhost:4399/update', null, {
@@ -277,8 +277,9 @@ export default {
 }
 
 .question {
-  left: 20%;
   width: 75%;
+  position: relative;
+  text-align: left;
 }
 
 .el-header {

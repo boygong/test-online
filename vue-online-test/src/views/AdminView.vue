@@ -21,7 +21,8 @@
               <input class="flip-card__input" v-model="classname" name="class_name" placeholder="软件x班">
               <input class="flip-card__input" v-model="Id1" name="student_id" placeholder="Id">
               <input class="flip-card__input" v-model="password1" name="password" placeholder="Password" type="password">
-              <input class="flip-card__input" v-model="confirmPassword" name="confirm_password" placeholder="Confirm Password" type="password">
+              <input class="flip-card__input" v-model="confirmPassword" name="confirm_password"
+                placeholder="Confirm Password" type="password">
               <button class="flip-card__btn" @click="tosign">Confirm!</button>
             </form>
           </div>
@@ -68,14 +69,17 @@ export default {
       axios.post('http://localhost:4399/admin', userData)
         .then(response => {
           console.log(response.data);
+          console.log("response.data结束标记")
           const token = response.data;
           localStorage.setItem('token', token);
           this.$message({ message: '登录成功', type: 'success' });
           localStorage.setItem('user', JSON.stringify(userData));
+          const user = JSON.parse(localStorage.getItem('user'));
+          console.log(user.studentId);
           this.$router.push('/home/about');
         })
-        .catch(()=> {
-        
+        .catch(() => {
+          this.$message.error('出错啦~');
         })
         .finally(() => {
           Loading.service().close(); // 关闭加载状态
@@ -113,9 +117,9 @@ export default {
       }
       Loading.service();
       const userData = {
-        student_id: this.Id1,
+        studentId: this.Id1,
         password: this.password1,
-        class_name: this.classname,
+        className: this.classname,
         name: this.name
       };
       axios.post('http://localhost:4399/sign', userData)
@@ -141,6 +145,8 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener('beforeunload', this.handleBeforeUnload);
+    // localStorage.removeItem('token');
+    // localStorage.removeItem('user');
   },
 };
 </script>
@@ -153,19 +159,21 @@ export default {
   --bg-color: #fff;
   --bg-color-alt: #666;
   --main-color: #323232;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    background-image: url("../assets/home.jpg");
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  background-image: url("../assets/home.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
 }
-.card-switch{
+
+.card-switch {
   padding-top: 15%;
   margin-left: 45%;
 }
+
 /* switch card */
 .switch {
   transform: translateY(-200px);
@@ -178,6 +186,7 @@ export default {
   width: 50px;
   height: 20px;
 }
+
 .card-side::before {
   position: absolute;
   content: 'Log in';
@@ -236,23 +245,23 @@ export default {
   transition: 0.3s;
 }
 
-.toggle:checked + .slider {
+.toggle:checked+.slider {
   background-color: var(--input-focus);
 }
 
-.toggle:checked + .slider:before {
+.toggle:checked+.slider:before {
   transform: translateX(30px);
 }
 
-.toggle:checked ~ .card-side:before {
+.toggle:checked~.card-side:before {
   text-decoration: none;
 }
 
-.toggle:checked ~ .card-side:after {
+.toggle:checked~.card-side:after {
   text-decoration: underline;
 }
 
-/* card */ 
+/* card */
 
 .flip-card__inner {
   width: 300px;
@@ -260,22 +269,23 @@ export default {
   position: relative;
   background-color: transparent;
   perspective: 1000px;
-    /* width: 100%;
+  /* width: 100%;
     height: 100%; */
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
-.toggle:checked ~ .flip-card__inner {
+.toggle:checked~.flip-card__inner {
   transform: rotateY(180deg);
 }
 
-.toggle:checked ~ .flip-card__front {
+.toggle:checked~.flip-card__front {
   box-shadow: none;
 }
 
-.flip-card__front, .flip-card__back {
+.flip-card__front,
+.flip-card__back {
   padding: 20px;
   position: absolute;
   display: flex;
@@ -333,7 +343,8 @@ export default {
   border: 2px solid var(--input-focus);
 }
 
-.flip-card__btn:active, .button-confirm:active {
+.flip-card__btn:active,
+.button-confirm:active {
   box-shadow: 0px 0px var(--main-color);
   transform: translate(3px, 3px);
 }
@@ -350,5 +361,4 @@ export default {
   font-weight: 600;
   color: var(--font-color);
   cursor: pointer;
-} 
-</style>
+}</style>

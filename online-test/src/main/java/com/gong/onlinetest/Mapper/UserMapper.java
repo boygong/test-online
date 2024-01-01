@@ -12,8 +12,8 @@ public interface UserMapper {
     @Select("select * from onlinetest.students")
     public List<Student> selectAll();
 
-    @Select("select password from onlinetest.students where student_id = #{student_id} ")
+    @Select("select password from onlinetest.students where student_id = #{studentId} ")
     public String selectPassword(Integer student_id);
-    @Insert("insert into onlinetest.students(name, password, student_id,class_name) values (#{name},#{password},#{student_id},#{class_name})")
+    @Insert("insert into onlinetest.students(name, password, student_id,class_name) values (#{name},#{password},#{studentId},#{className})")
     public void addUser(Student student);
 }

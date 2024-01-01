@@ -8,6 +8,7 @@ import com.gong.onlinetest.Pojo.Questions;
 import com.gong.onlinetest.Pojo.StudentExam;
 import org.apache.ibatis.annotations.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -31,7 +32,7 @@ public interface ExamMapper {
     int InsertTeacherExam(Integer questionId, Integer examId);
 
     @Insert("INSERT INTO student_exam (student_id, exam_id, state, name) " +
-            "VALUES (#{studentId}, #{examId}, '未开始', (SELECT MAX(name) FROM exams WHERE exam_id = #{examId}))")
+            "VALUES (#{studentId}, #{examId}, '未开始', (SELECT MAX(name) FROM exams WHERE exams.id = #{examId}))")
     int InsertStudentExam(Integer studentId, Integer examId);
 
 
@@ -66,4 +67,8 @@ public interface ExamMapper {
             "                   ON student_exam.student_id = records_test.student_id AND student_exam.name = records_test.name " +
             "WHERE student_exam.student_id = #{studentId};")
     List<StudentExam> SelectExamByStu(Integer studentId);
+
+    //查询考试过期的考试id
+    @Select("select id from exams where end_time<#{now}")
+    List<Integer> getByExpireTime(LocalDateTime now);
 }

@@ -80,6 +80,7 @@ export default {
   },
   mounted(){
     const user = JSON.parse(localStorage.getItem('user'));
+    console.log(user.studentId);
         axios.get('http://localhost:4399/findAllData', { params: { studentId: parseInt(user.studentId) } })
             .then(response => {
             this.form = response.data;
