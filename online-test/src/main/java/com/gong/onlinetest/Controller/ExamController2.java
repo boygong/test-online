@@ -4,6 +4,7 @@ import com.gong.onlinetest.Pojo.Exam;
 import com.gong.onlinetest.Pojo.Question;
 import com.gong.onlinetest.Pojo.Questions;
 import com.gong.onlinetest.Service.ExamService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import java.util.List;
  */
 @Slf4j
 @RestController
+@Tag(name = "考试相关接口2")
 public class ExamController2 {
     @Autowired
     private ExamService examService;

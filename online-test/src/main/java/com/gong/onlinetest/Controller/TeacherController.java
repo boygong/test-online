@@ -5,6 +5,9 @@ import com.gong.onlinetest.Pojo.Result;
 import com.gong.onlinetest.Pojo.Teacher;
 import com.gong.onlinetest.Service.TeacherService;
 import com.gong.onlinetest.utils.JwtUtils;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.tags.Tags;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,11 +23,13 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/teacher")
+@Tag(name = "老师相关接口")
 public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
     @PostMapping("/teacherLogin")
+    @Operation(summary = "教师登录")
     public Result teacherLogin(@RequestBody Teacher teacher){
         Teacher teacher1 = teacherService.TeacherLogin(teacher);
         if (teacher1!=null && teacher1.getPassword().equals(teacher.getPassword())){

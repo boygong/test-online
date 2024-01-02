@@ -4,6 +4,8 @@ import com.gong.onlinetest.DTO.PageBean;
 import com.gong.onlinetest.Pojo.Result;
 import com.gong.onlinetest.Pojo.Student;
 import com.gong.onlinetest.Service.StudentService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,23 +22,27 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/student")
+@Tag(name="学生相关接口")
 public class StudentController {
     @Autowired
     private StudentService studentService;
 
     @GetMapping("/getAllStudent")
+    @Operation(summary = "分页查询学生")
     public Result GetAllStudent() {
         PageBean pageBean = studentService.getStudentByPage(1, 10);
         return Result.success(pageBean);
     }
 
     @GetMapping("/getStudentByPage")
+    @Operation(summary = "分页查询学生增强版")
     public Result GeStudentByPage(@Param("page") Integer page, @Param(("pageSize")) Integer pageSize) {
         PageBean pageBean = studentService.getStudentByPage(page, pageSize);
         return Result.success(pageBean);
     }
 
     @GetMapping("/getStudentByInform")
+    @Operation(summary = "动态查询学生")
     public Result GetStudentByInform(@RequestParam(name = "studentId", required = false) Integer studentId,
                                      @RequestParam(name = "className", required = false) Integer className,
                                      @RequestParam(name = "name", required = false) String name) { //根据姓名，学号，班级动态查询学生
@@ -49,6 +55,7 @@ public class StudentController {
     }
 
     @PutMapping("/modifyStudent")
+    @Operation(summary = "修改学生信息")
     public Result ModifyStudent(@RequestBody Student student){
         boolean flag = studentService.modifyStudent(student);
         if (flag){
