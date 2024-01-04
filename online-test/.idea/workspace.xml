@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a4ec6cd-1fcb-4f3e-8e52-cb3f31787fc5" name="更改" comment="性能升级(新增动态自动修改考试状态业务)">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+    <list default="true" id="3a4ec6cd-1fcb-4f3e-8e52-cb3f31787fc5" name="更改" comment="新增knife4j接口文档功能代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/CoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/CoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/ExamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/ExamController2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/ExamController2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/RecordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/RecordsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/interceptor/LoginCheckInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/interceptor/LoginCheckInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,34 +44,34 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Desktop/Test_online/test-online/online-test/src/main/resources/com/gong/onlinetest/Mapper",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "0ebb505457198ca40d9d4289aba6badf",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/Test_online/test-online/online-test/src/main/resources/com/gong/onlinetest/Mapper&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0ebb505457198ca40d9d4289aba6badf&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.gong.onlinetest.Service.impl" />
@@ -252,7 +239,8 @@
       <workItem from="1701266142828" duration="83000" />
       <workItem from="1704089630533" duration="1283000" />
       <workItem from="1704090950308" duration="641000" />
-      <workItem from="1704172199692" duration="2924000" />
+      <workItem from="1704172199692" duration="3946000" />
+      <workItem from="1704260045734" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="汇总学生端（教师端无法正常运行）">
       <created>1700044604660</created>
@@ -268,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704091571107</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="新增knife4j接口文档功能代码">
+      <created>1704178557948</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704178557948</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,21 +295,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="汇总学生端（教师端无法正常运行）" />
     <MESSAGE value="性能升级(新增动态自动修改考试状态业务)" />
-    <option name="LAST_COMMIT_MESSAGE" value="性能升级(新增动态自动修改考试状态业务)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/gong/onlinetest/utils/JwtUtils.java</url>
-          <line>19</line>
-          <properties class="com.gong.onlinetest.utils.JwtUtils" method="generateJwt">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="新增knife4j接口文档功能代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增knife4j接口文档功能代码" />
   </component>
 </project>

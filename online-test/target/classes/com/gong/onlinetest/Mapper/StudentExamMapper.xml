@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gong.onlinetest.Mapper.StudentExamMapper">
+
+    <update id="update">
+        update student_exam
+        <set>
+            <if test="state!=null">state=#{state},</if>
+            <if test="studentName!=null">student_name=#{studentName},</if>
+            <if test="examName!=null">examName=#{examName},</if>
+            <if test="core!=null">core=#{core},</if>
+        </set>
+            where student_id = #{studentId}
+    </update>
+</mapper>
