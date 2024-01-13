@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3a4ec6cd-1fcb-4f3e-8e52-cb3f31787fc5" name="更改" comment="新增knife4j接口文档功能代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Mapper/ExamMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gong/onlinetest/Mapper/ExamMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +34,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\apache-maven-3.6.1\mvn_repo" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.6.1" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../apache-maven-3.6.1" />
         <option name="useMavenConfig" value="true" />
         <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
@@ -241,6 +245,20 @@
       <workItem from="1704090950308" duration="641000" />
       <workItem from="1704172199692" duration="3946000" />
       <workItem from="1704260045734" duration="107000" />
+      <workItem from="1704538240940" duration="2319000" />
+      <workItem from="1704541407269" duration="138000" />
+      <workItem from="1704939176099" duration="36000" />
+      <workItem from="1704954920181" duration="252000" />
+      <workItem from="1704956000850" duration="44000" />
+      <workItem from="1704956298665" duration="86000" />
+      <workItem from="1704957853000" duration="60000" />
+      <workItem from="1704957923577" duration="65000" />
+      <workItem from="1704958661731" duration="60000" />
+      <workItem from="1704959301673" duration="358000" />
+      <workItem from="1704959720946" duration="9000" />
+      <workItem from="1704959944451" duration="59000" />
+      <workItem from="1705040204032" duration="114000" />
+      <workItem from="1705046756819" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="汇总学生端（教师端无法正常运行）">
       <created>1700044604660</created>

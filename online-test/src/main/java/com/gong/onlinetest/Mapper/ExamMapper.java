@@ -2,10 +2,7 @@ package com.gong.onlinetest.Mapper;
 
 import com.gong.onlinetest.DTO.TeacherExam;
 import com.gong.onlinetest.DTO.TeacherExamPlus;
-import com.gong.onlinetest.Pojo.Exam;
-import com.gong.onlinetest.Pojo.Question;
-import com.gong.onlinetest.Pojo.Questions;
-import com.gong.onlinetest.Pojo.StudentExam;
+import com.gong.onlinetest.Pojo.*;
 import org.apache.ibatis.annotations.*;
 
 import java.time.LocalDateTime;
@@ -71,4 +68,9 @@ public interface ExamMapper {
     //查询考试过期的考试id
     @Select("select id from exams where end_time<#{now}")
     List<Integer> getByExpireTime(LocalDateTime now);
+
+    //考试明细
+    @Select("select id, name, teacher_id, end_time, start_time, className, id, name, time, core, student_id" +
+            " from exams left join records_test join student_exam se on exams.id = se.exam_id and exam_id=#{examId}")
+    List<Records> getRecordByEXamId(Integer examId);
 }
