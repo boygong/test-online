@@ -1,5 +1,6 @@
 package com.gong.onlinetest.Mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.gong.onlinetest.Pojo.Question;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -14,7 +15,7 @@ import java.util.List;
  * #student_number 21040147
  */
 @Mapper
-public interface QuestionMapper {
+public interface QuestionMapper extends BaseMapper<Question> {
     @Insert("insert into questions(content, type, opa, opb, opc, opd, correntAnswer)" +
             "values (#{content},#{type},#{opa},#{opb},#{opc},#{opd},#{currentAnswer})")
     public int InsertQuestion(Question question);

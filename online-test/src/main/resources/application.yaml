@@ -6,12 +6,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-
-mybatis:
-  check-config-location: true
-  configuration:
-    map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#
+#mybatis:
+#  check-config-location: true
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # springdoc-openapi项目配置
 springdoc:
@@ -30,3 +30,8 @@ knife4j:
   enable: true
   setting:
     language: zh_cn
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  check-config-location: true

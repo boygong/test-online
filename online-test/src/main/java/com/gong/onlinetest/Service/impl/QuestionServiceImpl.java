@@ -1,11 +1,15 @@
 package com.gong.onlinetest.Service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.gong.onlinetest.DTO.PageBean;
+import com.gong.onlinetest.Mapper.QuestionExamsMapper;
 import com.gong.onlinetest.Mapper.QuestionMapper;
 import com.gong.onlinetest.Pojo.Question;
+import com.gong.onlinetest.Pojo.QuestionExams;
 import com.gong.onlinetest.Service.QuestionService;
+import com.gong.onlinetest.exception.DeleteException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +24,9 @@ import java.util.List;
 public class QuestionServiceImpl implements QuestionService {
     @Autowired
     private QuestionMapper questionMapper;
+    @Autowired
+    private QuestionExamsMapper questionExamsMapper;
+
     @Override
     public PageBean GetQuestionByPage(Integer page, Integer pageSize) {
         PageHelper.startPage(page,pageSize);
@@ -47,5 +54,16 @@ public class QuestionServiceImpl implements QuestionService {
         }
         int row = questionMapper.updateQuestion(question);
         return row==1? true:false;
+    }
+
+    @Override
+    public void delete(Integer questionId) {
+        LambdaQueryWrapper<QuestionExams> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(QuestionExams::getQuestionId,questionId);
+        List<QuestionExams> questionExams = questionExamsMapper.selectList(wrapper);
+        if (questionExams!=null){
+            throw new DeleteException("题目与考试管理无法删除");
+        }
+        questionMapper.deleteById(questionId);
     }
 }

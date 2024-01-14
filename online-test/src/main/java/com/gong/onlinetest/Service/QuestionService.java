@@ -14,4 +14,6 @@ public interface QuestionService {
     boolean QuestionInsert(Question question);
 
     boolean ModifyQuestion(Question question);
+
+    void delete(Integer questionId);
 }

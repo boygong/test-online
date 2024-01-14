@@ -54,4 +54,10 @@ public class QuestionController {
         }
 
     }
+    @DeleteMapping("/deleteQuestion")
+    @Operation(summary = "删除题目")
+    public Result deleteQuestion(@RequestParam Integer questionId){
+        questionService.delete(questionId);
+        return Result.success();
+    }
 }
