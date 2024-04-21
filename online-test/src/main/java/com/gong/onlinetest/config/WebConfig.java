@@ -11,10 +11,10 @@ import org.springframework.web.servlet.config.annotation.*;
 public class WebConfig implements WebMvcConfigurer {
     @Autowired
     private LoginCheckInterceptor loginCheckInterceptor;
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(loginCheckInterceptor).addPathPatterns("/**")
-                .excludePathPatterns("/admin", "/teacher/teacherLogin","/doc.html/**","/swagger-resources/**","/swagger-ui/**", "/v3/**", "/error");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(loginCheckInterceptor).addPathPatterns("/**")
+//                .excludePathPatterns("/admin", "/teacher/teacherLogin","/doc.html/**","/swagger-resources/**","/swagger-ui/**", "/v3/**", "/error");
+//    }
 }
 
